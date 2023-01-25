@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { RouterProvider } from 'react-router';
+import router from '../src//router///routes'
+const client = new ApolloClient({
+  uri: "YOUR_HASURA_GRAPHQL_URL",
+  cache: new InMemoryCache(),
+});
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div  data-theme="lofi">
+     <RouterProvider router={router} />
     </div>
   );
 }
